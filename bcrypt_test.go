@@ -1,4 +1,5 @@
-
+// SPDX-License-Identifier: MIT
+// Testing the bcrypt functionality
 
 package bcrypt
 
