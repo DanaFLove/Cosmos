@@ -3,6 +3,8 @@
 
 package bcrypt
 
+// @dev: Need these in same directory
+
 import (
 	"bytes"
 	"fmt"
