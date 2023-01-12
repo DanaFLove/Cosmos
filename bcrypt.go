@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-// Package bcrypt implements adaptive hashing algorithm
+// Package bcrypt implements adaptive hashing algorithm updated for 2023
 
 package bcrypt
 
