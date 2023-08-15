@@ -65,7 +65,7 @@ func TestVeryShortPasswords(t *testing.T) {
 
 func TestTooLongPasswordsWork(t *testing.T) {
 	salt := []byte("XajjQvNhvvRt5GSeFk1xFe")
-	// One byte over the usual 56 byte limit that blowfish has
+	// One byte over the usual 56 byte limit that blowfish currently has
 	tooLongPass := []byte("012345678901234567890123456789012345678901234567890123456")
 	tooLongExpected := []byte("$2a$10$XajjQvNhvvRt5GSeFk1xFe5l47dONXg781AmZtd869sO8zfsHuw7C")
 	hash, err := bcrypt(tooLongPass, 10, salt)
