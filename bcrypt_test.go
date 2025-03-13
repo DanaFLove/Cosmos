@@ -4,6 +4,7 @@
 package bcrypt
 
 // @dev: Need these in same directory
+// @dev: Test the bcrypt function
 
 import (
 	"bytes"
