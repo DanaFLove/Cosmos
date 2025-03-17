@@ -1,1 +1,29 @@
+Explanation
+Dynamic Cost Adjustment: The DynamicCostAdjuster struct allows for dynamic adjustment of the cost factor based on system load. This ensures that the hashing process remains secure without overloading the system.
 
+Parallel Processing: The ParallelGenerateFromPassword function uses goroutines to hash multiple passwords concurrently, improving performance on multi-core systems.
+
+Security Enhancements: The code maintains the use of salts and peppers for enhanced security. It also checks for valid costs and handles errors gracefully to prevent information leaks.
+
+Error Handling: Custom error types like InvalidCostError, InvalidHashPrefixError, and HashVersionTooNewError provide detailed error messages without revealing sensitive information.
+
+Code Organization: The code is organized into clear sections with each function having a specific responsibility, making it easier to maintain and extend.
+
+Usage
+To use this code, create an instance of AdaptiveHasher, generate a salt, and then hash passwords using GenerateFromPassword. For parallel hashing, use ParallelGenerateFromPassword with slices of salts and passwords.
+
+Example:
+adjuster := NewAdaptiveHasher(MinCost, MaxCost)
+salt := []byte{ /* your salt */ }
+password := []byte{ /* your password */ }
+
+hash, err := adjuster.GenerateFromPassword(salt, password)
+if err != nil {
+    fmt.Println(err)
+    return
+}
+
+fmt.Println(string(hash))
+
+
+This approach ensures both security and efficiency in password handling.
