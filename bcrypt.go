@@ -18,8 +18,7 @@ const (
 	DefaultCost int = 10 // the cost that will actually be set if a cost below MinCost is passed into GenerateFromPassword
 )
 
-// The error returned from CompareHashAndPassword when a password and hash do
-// not match.
+// The error returned from CompareHashAndPassword when a password and hash do not match.
 var ErrMismatchedHashAndPassword = errors.New("crypto/bcrypt: hashedPassword is not the hash of the given password")
 
 // The error returned from CompareHashAndPassword when a hash is too short to
